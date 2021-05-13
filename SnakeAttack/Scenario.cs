@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Programação
+namespace SnakeAttack
 {
     class Scenario
     {
@@ -31,7 +31,7 @@ namespace Programação
             {
                 move();
                 input();
-                Thread.Sleep(200);
+                Thread.Sleep(150);
                 repaint();
             }
         }
@@ -58,7 +58,7 @@ namespace Programação
                     break;
                 case Orientation.LESTE:
                     pos = this.hero.posHeroX + 1;
-                    if (pos < this.map.lenghtX - 1)
+                    if (pos < map.lenghtX - 1)
                         this.hero.posHeroX = pos;
                     break;
                 case Orientation.NORTE:

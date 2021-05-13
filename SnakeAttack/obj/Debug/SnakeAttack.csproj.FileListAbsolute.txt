@@ -5,3 +5,10 @@ C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csproj
 C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csproj.CoreCompileInputs.cache
 C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.exe
 C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.pdb
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.exe.config
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.exe
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.pdb
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csprojAssemblyReference.cache
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csproj.CoreCompileInputs.cache
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.exe
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.pdb
