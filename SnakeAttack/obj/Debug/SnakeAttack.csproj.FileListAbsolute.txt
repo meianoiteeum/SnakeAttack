@@ -1,0 +1,7 @@
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.exe.config
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.exe
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\bin\Debug\SnakeAttack.pdb
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csprojAssemblyReference.cache
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.csproj.CoreCompileInputs.cache
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.exe
+C:\Users\Midni\source\repos\SnakeAttack\SnakeAttack\obj\Debug\SnakeAttack.pdb
