@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SnakeAttack
 {
     class Scenario
     {
         public Map map;
-        public Hero hero;        
+        public Hero hero;
+        public Header header;
         private ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
         private int oldPosX;
         private int oldPosY;
 
         public Scenario()
         {
-            Console.CursorVisible = false;
             this.map = new Map();
             this.hero = new Hero();
+            this.header = new Header(this.hero);
             this.hero.posHeroX = 1;
             this.hero.posHeroY = 1;
         }
@@ -33,12 +30,12 @@ namespace SnakeAttack
                 input();
                 Thread.Sleep(150);
                 repaint();
+                this.header.reprintPhrase(this.hero.level, this.hero.xp);
             }
         }
 
         public void repaint()
         {
-            //Console.Clear();
             if((this.hero.posHeroX != this.oldPosX) || (this.hero.posHeroY != this.oldPosY))
                 this.map.setMap(this.hero.posHeroY, this.hero.posHeroX, this.oldPosY, this.oldPosX, this.hero.elementBody);            
             this.map.getMap();
@@ -51,22 +48,22 @@ namespace SnakeAttack
 
             switch (this.hero.orientation)
             {
-                case Orientation.OESTE:
+                case Orientation.WEST:
                     pos = this.hero.posHeroX - 1;
                     if (pos > 0)
                         this.hero.posHeroX = pos;
                     break;
-                case Orientation.LESTE:
+                case Orientation.EAST:
                     pos = this.hero.posHeroX + 1;
                     if (pos < map.lenghtX - 1)
                         this.hero.posHeroX = pos;
                     break;
-                case Orientation.NORTE:
+                case Orientation.NORTH:
                     pos = this.hero.posHeroY - 1;
                     if (pos > 0)
                         this.hero.posHeroY = pos;
                     break;
-                case Orientation.SUL:
+                case Orientation.SOUTH:
                     pos = this.hero.posHeroY + 1;
                     if (pos + 1 < this.map.lenghtY)
                         this.hero.posHeroY = pos;

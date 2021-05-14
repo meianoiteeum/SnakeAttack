@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="Graphic.cs" />
+    <Compile Include="Header.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />

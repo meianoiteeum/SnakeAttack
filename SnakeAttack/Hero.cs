@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace SnakeAttack
 {
@@ -13,45 +9,66 @@ namespace SnakeAttack
         public int posHeroY { get; set; }
         public int level { get; set; }
         public string elementBody { get; set; }
+        public int xp { get; set; }
 
         public Hero()
         {
-            this.orientation = Orientation.LESTE;
+            this.orientation = Orientation.EAST;
 
             Encoding cp437 = Encoding.GetEncoding(437);
             byte[] elementBodyHex = new byte[1];
             elementBodyHex[0] = 0xFE;
             this.elementBody = cp437.GetString(elementBodyHex);
 
-            this.level = 0;
+            this.level = 1;
 
             this.posHeroX = 2;
             this.posHeroY = 2;
+
+            this.xp = 0;
         }
 
         public void invertOrientation(char key)
         {
             switch (this.orientation)
             {
-                case Orientation.NORTE:
-                case Orientation.SUL:
+                case Orientation.NORTH:
+                case Orientation.SOUTH:
                     if (key == 'A' || key == 'a')
-                        this.orientation = Orientation.OESTE;
+                        this.orientation = Orientation.WEST;
                     else
-                        this.orientation = Orientation.LESTE;
+                        this.orientation = Orientation.EAST;
                     break;
-                case Orientation.LESTE:
+                case Orientation.EAST:
                     if (key == 'A' || key == 'a')
-                        this.orientation = Orientation.NORTE;
+                        this.orientation = Orientation.NORTH;
                     else
-                        this.orientation = Orientation.SUL;
+                        this.orientation = Orientation.SOUTH;
                     break;
-                case Orientation.OESTE:
+                case Orientation.WEST:
                     if (key == 'A' || key == 'a')
-                        this.orientation = Orientation.SUL;
+                        this.orientation = Orientation.SOUTH;
                     else
-                        this.orientation = Orientation.NORTE;
+                        this.orientation = Orientation.NORTH;
                     break;
+            }
+        }
+
+        public int getXpForLevel(int level)
+        {
+            switch (level)
+            {
+                case 1:
+                    return 4;
+                    break;
+                case 2:
+                    return 6;
+                    break;
+                case 3:
+                    return 8;
+                    break;
+                default:
+                    return 0;
             }
         }
     }

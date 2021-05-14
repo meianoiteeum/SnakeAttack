@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SnakeAttack
 {
@@ -10,6 +7,7 @@ namespace SnakeAttack
     {
         public Map()
         {
+            Console.CursorVisible = false;
             List<byte[]> hexCodes = new List<byte[]>();
 
             byte[] verticalHex = new byte[1] { 0xB3 };
@@ -25,7 +23,6 @@ namespace SnakeAttack
             hexCodes.Add(downRightHex);
             hexCodes.Add(upLeftHex);
             hexCodes.Add(downLeftHex);
-
 
             base.setHexCodes(hexCodes);
 
@@ -57,7 +54,6 @@ namespace SnakeAttack
                 { vertical,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",vertical },
                 { downLeft,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,downRight }
             };
-
         }
     }
 }

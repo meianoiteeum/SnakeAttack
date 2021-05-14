@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SnakeAttack
 {
@@ -14,16 +12,13 @@ namespace SnakeAttack
         public string downRight { get; set; }
         public string upLeft { get; set; }
         public string downLeft { get; set; }
-        public string[,] graph;
+        public string[,] graph { get; set; }
         public int positionX { get; set; }
         public int positionY { get; set; }
         public int lenghtX { get; set; }
         public int lenghtY { get; set; }
 
-        public Graphic()
-        {
-            
-        }
+        public Graphic() {}
 
         public void setHexCodes(List<byte[]> hexCodes)
         {
@@ -64,7 +59,7 @@ namespace SnakeAttack
                 for (int j = this.positionX; j < lenghtX; j++)
                 {
                     Console.SetCursorPosition(j, i);
-                    if(getColorX < colorX.Length && y == colorY && colorX[getColorX] == x)
+                    if(verifyExistsDifferentColor(getColorX, colorX, y, colorY, x))
                     {
                         Console.ForegroundColor = consoleColor;
                         waitColor = true;
@@ -80,6 +75,11 @@ namespace SnakeAttack
                 }
                 y++;
             }
+        }
+
+        private Boolean verifyExistsDifferentColor(int getColorX, int[] colorX, int y, int colorY, int x)
+        {
+            return getColorX < colorX.Length && y == colorY && colorX[getColorX] == x;
         }
     }
 }

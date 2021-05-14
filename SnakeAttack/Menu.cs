@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SnakeAttack
 {
     class Menu : Graphic
     {
-        private ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
 
         public Menu()
         {
@@ -60,7 +56,6 @@ namespace SnakeAttack
                 { downLeft,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,downRight }
             };
 
-            //base.getMap();
             start();
         }
 
@@ -79,7 +74,6 @@ namespace SnakeAttack
         {
             paintPressStart();
         }
-
         private void paintPressStart()
         {
             string[] pressStart = new string[11] { "p", "r", "e", "s", "s", " ", "E", "N", "T", "E", "R" };
@@ -105,7 +99,6 @@ namespace SnakeAttack
             base.getMap();
             Thread.Sleep(500);
         }
-
         private void input(ConsoleKeyInfo keyInfo)
         {
             if (keyInfo.Key == ConsoleKey.Enter)

@@ -8,9 +8,9 @@ namespace SnakeAttack
 {
     enum Orientation
     {
-        NORTE,
-        LESTE,
-        SUL,
-        OESTE
+        NORTH,
+        EAST,
+        SOUTH,
+        WEST
     }
 }
