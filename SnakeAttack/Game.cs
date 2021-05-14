@@ -7,8 +7,7 @@ namespace SnakeAttack
     {
         public static void Main(string[] args)
         {
-            Scenario scenario = new Scenario();
-            scenario.start();
+            new Menu();
             Console.ReadKey();
         }
     }

@@ -22,9 +22,9 @@ namespace SnakeAttack
             hexCodes.Add(verticalHex);
             hexCodes.Add(horizontalHex);
             hexCodes.Add(upRightHex);
-            hexCodes.Add(downLeftHex);
-            hexCodes.Add(upLeftHex);
             hexCodes.Add(downRightHex);
+            hexCodes.Add(upLeftHex);
+            hexCodes.Add(downLeftHex);
 
 
             base.setHexCodes(hexCodes);
@@ -58,13 +58,6 @@ namespace SnakeAttack
                 { downLeft,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,horizontal,downRight }
             };
 
-        }
-
-        public void setMap(int newX, int newY, int oldX, int oldY, string element)
-        {
-            base.graph[newX, newY] = element;
-            if (oldX != 0 && oldY != 0)
-                base.graph[oldX, oldY] = " ";
         }
     }
 }

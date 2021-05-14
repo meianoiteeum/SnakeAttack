@@ -1,0 +1,7 @@
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Release\SnakeAttack.exe.config
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Release\SnakeAttack.exe
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\bin\Release\SnakeAttack.pdb
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Release\SnakeAttack.csprojAssemblyReference.cache
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Release\SnakeAttack.csproj.CoreCompileInputs.cache
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Release\SnakeAttack.exe
+C:\Users\Midni\Documents\Jogos Digitais\1º Semestre\Fundamentos de Programação\SnakeAttack\SnakeAttack\obj\Release\SnakeAttack.pdb

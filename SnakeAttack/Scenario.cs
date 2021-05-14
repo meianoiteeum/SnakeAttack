@@ -11,7 +11,7 @@ namespace SnakeAttack
     {
         public Map map;
         public Hero hero;        
-        ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
+        private ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
         private int oldPosX;
         private int oldPosY;
 
@@ -78,8 +78,8 @@ namespace SnakeAttack
         {
             if (Console.KeyAvailable)
             {
-                keyInfo = Console.ReadKey(true);
-                char key = keyInfo.KeyChar;
+                this.keyInfo = Console.ReadKey(true);
+                char key = this.keyInfo.KeyChar;
                 if (key == 'A' || key == 'D' || key == 'a' || key == 'd')
                     this.hero.invertOrientation(key);
             }
