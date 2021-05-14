@@ -77,14 +77,14 @@ namespace SnakeAttack
         private void paintPressStart()
         {
             string[] pressStart = new string[11] { "p", "r", "e", "s", "s", " ", "E", "N", "T", "E", "R" };
-            int y = 17;
+            int[] y = new int[] { 17};
             int[] positionX = new int[11] {25,26,27,28,29,30,31,32,33,34,35};
 
             for(int i = 0; i < pressStart.Length; i++)
             {
                 string s = pressStart[i];
                 int x = positionX[i];
-                base.setMap(y,x,0,0,s);
+                base.setMap(y[0],x,0,0,s);
             }
             
             ConsoleColor consoleColor = ConsoleColor.Yellow;
@@ -94,7 +94,7 @@ namespace SnakeAttack
             for (int i = 0; i < pressStart.Length; i++)
             {
                 int x = positionX[i];
-                base.setMap(y, x, 0, 0, " ");
+                base.setMap(y[0], x, 0, 0, " ");
             }
             base.getMap();
             Thread.Sleep(500);

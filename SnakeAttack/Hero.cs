@@ -2,28 +2,19 @@
 
 namespace SnakeAttack
 {
-    class Hero
+    class Hero : BasePerson
     {
         public Orientation orientation { get; set; }
-        public int posHeroX { get; set; }
-        public int posHeroY { get; set; }
-        public int level { get; set; }
-        public string elementBody { get; set; }
         public int xp { get; set; }
 
         public Hero()
         {
-            this.orientation = Orientation.EAST;
+            this.orientation = Orientation.EAST;            
 
-            Encoding cp437 = Encoding.GetEncoding(437);
-            byte[] elementBodyHex = new byte[1];
-            elementBodyHex[0] = 0xFE;
-            this.elementBody = cp437.GetString(elementBodyHex);
+            base.level = 1;
 
-            this.level = 1;
-
-            this.posHeroX = 2;
-            this.posHeroY = 2;
+            base.posX = 2;
+            base.posY = 2;
 
             this.xp = 0;
         }

@@ -40,10 +40,20 @@ namespace SnakeAttack
 
         public void getMap()
         {
-            getMap(new int[] {-1}, 0, 0);
+            getMap(new int[] {-1}, new int[] { -1 }, 0);
         }
 
-        public void getMap(int[] colorX, int colorY, ConsoleColor consoleColor)
+        public void setEnemyMap(int posX, int posY, ConsoleColor consoleColor)
+        {
+            int y = this.positionY + posX;
+            int x = this.positionX + posY;
+
+            Console.SetCursorPosition(x, y);
+            Console.ForegroundColor = consoleColor;
+            Console.Write(this.graph[posY, posX]);
+        }
+
+        public void getMap(int[] colorX, int[] colorY, ConsoleColor consoleColor)
         {
             int x;
             int y = 0;
@@ -59,7 +69,7 @@ namespace SnakeAttack
                 for (int j = this.positionX; j < lenghtX; j++)
                 {
                     Console.SetCursorPosition(j, i);
-                    if(verifyExistsDifferentColor(getColorX, colorX, y, colorY, x))
+                    if(verifyExistsDifferentColor(getColorX, colorX, y, colorY[0], x))
                     {
                         Console.ForegroundColor = consoleColor;
                         waitColor = true;
