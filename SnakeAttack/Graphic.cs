@@ -43,14 +43,15 @@ namespace SnakeAttack
             getMap(new int[] {-1}, new int[] { -1 }, 0);
         }
 
-        public void setEnemyMap(int posX, int posY, ConsoleColor consoleColor)
+        public void setEnemyMap(int posX, int posY, string body, ConsoleColor consoleColor)
         {
             int y = this.positionY + posX;
             int x = this.positionX + posY;
 
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = consoleColor;
-            Console.Write(this.graph[posY, posX]);
+            Console.Write(body);
+            resetColorConsole();
         }
 
         public void getMap(int[] colorX, int[] colorY, ConsoleColor consoleColor)
@@ -60,8 +61,7 @@ namespace SnakeAttack
             int getColorX = 0;
             int lenghtY = this.positionY + this.lenghtY;
             int lenghtX = this.positionX + this.lenghtX;
-            Boolean waitColor = false;
-            ConsoleColor consoleColorWhite = ConsoleColor.Gray;
+            Boolean waitColor = false;            
 
             for (int i = this.positionY; i < lenghtY; i++)
             {
@@ -78,13 +78,19 @@ namespace SnakeAttack
                     Console.Write(this.graph[y, x]);
                     if (waitColor)
                     {
-                        Console.ForegroundColor = consoleColorWhite;
+                        resetColorConsole();
                         waitColor = false;
                     }                        
                     x++;
                 }
                 y++;
             }
+        }
+
+        private void resetColorConsole()
+        {
+            ConsoleColor consoleColorGray = ConsoleColor.Gray;
+            Console.ForegroundColor = consoleColorGray;
         }
 
         private Boolean verifyExistsDifferentColor(int getColorX, int[] colorX, int y, int colorY, int x)

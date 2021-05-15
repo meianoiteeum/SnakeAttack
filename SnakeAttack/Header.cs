@@ -44,12 +44,12 @@ namespace SnakeAttack
         {
             string bar = "";
             int newLenght = lenght + 2;
-            for(int i = 0; i<=newLenght; i++)
+            for(int i = 0; i<newLenght; i++)
             {
                 if(i == 0)
                 {
                     bar+="[";
-                }else if (i == newLenght)
+                }else if (i == newLenght-1)
                 {
                     bar+="]";
                 }

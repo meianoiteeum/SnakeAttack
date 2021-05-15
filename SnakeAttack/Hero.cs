@@ -6,6 +6,7 @@ namespace SnakeAttack
     {
         public Orientation orientation { get; set; }
         public int xp { get; set; }
+        public bool isLive { get; set; }
 
         public Hero()
         {
@@ -17,6 +18,7 @@ namespace SnakeAttack
             base.posY = 2;
 
             this.xp = 0;
+            this.isLive = true;
         }
 
         public void invertOrientation(char key)
@@ -60,6 +62,19 @@ namespace SnakeAttack
                     break;
                 default:
                     return 0;
+            }
+        }
+
+        public void verifyLevelUp()
+        {
+            if(this.level == 1 && this.xp == 4)
+            {
+                this.level++;
+                this.xp = 0;
+            }else if(this.level == 2 && this.xp == 6)
+            {
+                this.level++;
+                this.xp = 0;
             }
         }
     }

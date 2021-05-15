@@ -13,9 +13,10 @@ namespace SnakeAttack
         private int oldPosX;
         private int oldPosY;
         private int levelArea;
-        private List<int> enemyPosX;
-        private List<int> enemyPosY;
-        private int enemyQtde;
+        private List<Enemy> enemies;
+        List<int> enemiesPosX;
+        List<int> enemiesPosY;
+        private int enemiesQtde;
 
         public Scenario()
         {
@@ -25,15 +26,16 @@ namespace SnakeAttack
             this.levelArea = 1;
             this.hero.posX = 1;
             this.hero.posY = 1;
-            this.enemyPosX = new List<int>();
-            this.enemyPosY = new List<int>();
+            this.enemies = new List<Enemy>();
+            this.enemiesPosX = new List<int>();
+            this.enemiesPosY = new List<int>();
         }
 
         public void start() {
             this.map.setMap(this.hero.posY,this.hero.posX,0,0, this.hero.elementBody);
+            this.map.getMap();
             spawnEnemys();
-            this.map.getMap();            
-            while (this.levelArea < 6)
+            while (this.hero.isLive && this.levelArea < 6)
             {
                 move();
                 input();
@@ -48,12 +50,12 @@ namespace SnakeAttack
             if((this.hero.posX != this.oldPosX) || (this.hero.posY != this.oldPosY))
                 this.map.setMap(this.hero.posY, this.hero.posX, this.oldPosY, this.oldPosX, this.hero.elementBody);
 
-            if(this.enemyQtde == 0)
+            if (this.enemiesQtde == 0)
             {
                 this.levelArea++;
                 spawnEnemys();
             }
-                
+
             this.map.getMap();
         }
 
@@ -90,12 +92,22 @@ namespace SnakeAttack
 
         public void verifyEnemyPosition(int posX, int posY)
         {
-            if(this.enemyPosX.Contains(posX) && this.enemyPosY.Contains(posY)){
-                this.enemyQtde--;
-                this.enemyPosX.Remove(posX);
-                this.enemyPosY.Remove(posY);
-                this.map.setMap(posY, posX, 0, 0," ");
-                this.hero.xp++;
+            foreach(Enemy enemy in enemies) {
+                if (enemy.posX.Equals(posX) && enemy.posY.Equals(posY)) {
+                    if(enemy.level > this.hero.level)
+                    {
+                        this.hero.isLive = false;
+                        break;
+                    }
+                    this.enemiesPosX.Remove(enemy.posX);
+                    this.enemiesPosY.Remove(enemy.posY);
+                    this.enemiesQtde--;
+                    this.enemies.Remove(enemy);
+                    this.map.setMap(posY, posX, 0, 0, " ");
+                    this.hero.xp++;
+                    this.hero.verifyLevelUp();
+                    break;
+                }
             }
         }
 
@@ -115,39 +127,44 @@ namespace SnakeAttack
             switch (this.levelArea)
             {
                 case 1:
-                    this.enemyQtde = 2;
-                    generateEnemy(this.enemyQtde);
+                    this.enemiesQtde = 2;
+                    generateEnemy(2, 1);
                     break;
                 case 2:
-                    this.enemyQtde = 4;
-                    generateEnemy(this.enemyQtde);
+                    this.enemiesQtde = 4;
+                    generateEnemy(4, 1);
+                    generateEnemy(2, 2);
                     break;
                 case 3:
-                    this.enemyQtde = 8;
-                    generateEnemy(this.enemyQtde);
+                    this.enemiesQtde = 4;
+                    generateEnemy(5, 2);
+                    generateEnemy(2, 3);
+                    generateEnemy(3, 4);
                     break;
                 case 4:
-                    this.enemyQtde = 16;
-                    generateEnemy(this.enemyQtde);
+                    this.enemiesQtde = 3;
+                    generateEnemy(5, 3);
+                    generateEnemy(14, 4);
                     break;
                 case 5:
-                    this.enemyQtde = 16;
-                    generateEnemy(this.enemyQtde);
+                    this.enemiesQtde = 3;
+                    generateEnemy(6, 3);
+                    generateEnemy(11, 4);
                     break;
             }
         }
 
-        private void generateEnemy(int qtdeEnemy)
+        private void generateEnemy(int qtdeEnemy, int enemyLvl)
         {
             for (int i = 0; i < qtdeEnemy ; i++)
             {
-                int x = generatePosition(this.enemyPosX, this.map.lenghtX - 1);
+                int x = generatePosition(enemiesPosX, this.map.lenghtX - 1);
 
-                int y = generatePosition(this.enemyPosY, this.map.lenghtY - 1);
+                int y = generatePosition(enemiesPosY, this.map.lenghtY - 1);
 
-                Enemy enemy = new Enemy(x,y, this.levelArea);
-
-                this.map.setMap(y, x, 0, 0, enemy.elementBody);
+                Enemy enemy = new Enemy(x,y, enemyLvl);
+                this.enemies.Add(enemy);
+                this.map.setEnemyMap(y, x, enemy.elementBody, enemy.changeColor());
             }
         }
 
