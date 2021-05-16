@@ -3,7 +3,7 @@
   Suba de nível e saia da masmorra a salvo.
   
 ## Monstros
-  Cuidado com os inimigos mais forte que você ou será derrotado, observe suaa cores, ela os guiará para a vitória.
+  Cuidado com os inimigos mais forte que você ou será derrotado, observe suas cores, ela os guiará para a vitória.
   Cores dos inimigos por força:
   - Nível 1: Branco/Cinza;
   - Nível 2: Azul;

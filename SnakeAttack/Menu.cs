@@ -103,10 +103,36 @@ namespace SnakeAttack
         {
             if (keyInfo.Key == ConsoleKey.Enter)
             {
-                Console.Clear();
+                history();
                 Scenario scenario = new Scenario();
                 scenario.start();
             }
+        }
+        private void history() {
+            Console.Clear();
+            string[] history = new string[]{"Uma cobra caiu numa masmorra e você deve ajudá - la a sair desse lugar infestado",
+                                            "de monstros.",
+                                            "Suba de nível e saia da masmorra a salvo.",
+                                            "",
+                                            "## Monstros ##",
+                                            "Cuidado com os inimigos mais forte que você ou será derrotado, observe suas cores,",
+                                            "ela os guiará para a vitória.",
+                                            "",
+                                            "Cores dos inimigos por força:",
+                                            "   -Nível 1: Branco / Cinza;",
+                                            "   -Nível 2: Azul;",
+                                            "   -Nível 3: Verde;",
+                                            "   -Nível 4: Vermelho(não o enfrente ou o perecerá);",
+                                            "",
+                                            "Utilize as teclas {A} e {D}, para se locomover e se salvar.",
+                                            "Boa Sorte!"};
+            for (int i = 0; i < history.Length; i++)
+            {
+                Console.SetCursorPosition(20, 5 + i);
+                Console.Write(history[i]);
+            }
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
